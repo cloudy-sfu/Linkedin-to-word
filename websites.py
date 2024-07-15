@@ -72,6 +72,6 @@ def convert_url(url):
     query = parse_qs(parsed_url.query)
     username = extract_username(path, query)
     if username:
-        return formatted_domain, username
+        return f"{formatted_domain}: {username}"
     else:
-        return domain, username
+        return domain + path

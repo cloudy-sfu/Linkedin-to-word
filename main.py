@@ -60,8 +60,8 @@ else:
     telephone = ""
 websites = []
 for website in contact.get("websites", []):
-    domain_name, domain_user = convert_url(website.get("url", ""))
-    websites.append({"domain": domain_name, "user": domain_user})
+    website_ = convert_url(website.get("url", ""))
+    websites.append(website_)
 
 
 # %% education
@@ -101,8 +101,6 @@ for education in profile.get("education", []):
 
 
 # %% publication
-
-
 # Bullet point: https://github.com/elapouya/python-docx-template/issues/73
 def get_key_points(dict_):
     key_points = []
